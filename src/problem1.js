@@ -25,9 +25,20 @@ function getPageMaxScore(number) {
   return multiplyScore;
 }
 
+function getPlayerMaxScore(pages) {
+  const pageScore = Math.max(...pages.map((number) => getPageMaxScore(number)));
+
+  return pageScore;
+}
+
 function problem1(pobi, crong) {
-  var answer;
-  return answer;
+  const pobiScore = getPlayerMaxScore(pobi);
+  const crongScore = getPlayerMaxScore(crong);
+
+  if (pobiScore > crongScore) return 1;
+  if (pobiScore < crongScore) return 2;
+
+  return 0;
 }
 
 module.exports = problem1;
