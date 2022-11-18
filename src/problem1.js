@@ -14,6 +14,17 @@ function multiplyDigit(number) {
   return result;
 }
 
+function getPageMaxScore(number) {
+  const sumScore = sumDigit(number);
+  const multiplyScore = multiplyDigit(number);
+
+  if (sumScore > multiplyScore) {
+    return sumScore;
+  }
+
+  return multiplyScore;
+}
+
 function problem1(pobi, crong) {
   var answer;
   return answer;
