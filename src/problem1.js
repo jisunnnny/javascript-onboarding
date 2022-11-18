@@ -1,17 +1,17 @@
 function sumDigit(number) {
-  const result = String(number)
+  const sumResult = String(number)
     .split("")
-    .reduce((acc, curr) => acc + parseInt(curr));
+    .reduce((acc, curr) => acc + parseInt(curr), 0);
 
-  return result;
+  return sumResult;
 }
 
 function multiplyDigit(number) {
-  const result = Sting(number)
+  const multiplyResult = String(number)
     .split("")
-    .reduce((acc, curr) => acc * parseInt(curr));
+    .reduce((acc, curr) => acc * parseInt(curr), 1);
 
-  return result;
+  return multiplyResult;
 }
 
 function getPageMaxScore(number) {
