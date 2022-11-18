@@ -31,7 +31,22 @@ function getPlayerMaxScore(pages) {
   return pageScore;
 }
 
+const isValidPageOrder = (pages) =>
+  pages.every((page) => page > 1 && page < 400);
+
+const isNextPage = (pages) => pages[1] - 1 === pages[0];
+
+function isValid(pages) {
+  if (isValidPageOrder(pages) && isNextPage(pages)) {
+    return true;
+  }
+
+  return false;
+}
+
 function problem1(pobi, crong) {
+  if (!isValid(pobi) || !isValid(crong)) return -1;
+
   const pobiScore = getPlayerMaxScore(pobi);
   const crongScore = getPlayerMaxScore(crong);
 
